@@ -1,0 +1,90 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #ffffff;
+    color: #000000;
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.container {
+    text-align: center;
+}
+
+h1 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+#status {
+    font-size: 1.2rem;
+    margin-bottom: 16px;
+    min-height: 1.8rem;
+}
+
+.tabuleiro {
+    display: grid;
+    grid-template-columns: repeat(3, 110px);
+    grid-template-rows: repeat(3, 110px);
+    margin: 0 auto 20px auto;
+    width: fit-content;
+}
+
+.celula {
+    width: 110px;
+    height: 110px;
+    background-color: #ffffff;
+    border: 3px solid #000000;
+    font-size: 3.5rem;
+    font-weight: bold;
+    cursor: pointer;
+    color: #000000;
+}
+
+.celula:nth-child(-n+3)  { border-top: none; }
+.celula:nth-child(n+7)   { border-bottom: none; }
+.celula:nth-child(3n+1)  { border-left: none; }
+.celula:nth-child(3n)    { border-right: none; }
+
+.celula:hover:not(:disabled) {
+    background-color: #f0f0f0;
+}
+
+.celula:disabled {
+    cursor: default;
+}
+
+.celula[data-jogador="X"] {
+    color: #1565c0;
+}
+
+.celula[data-jogador="O"] {
+    color: #c62828;
+}
+
+#mensagem {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+    min-height: 2rem;
+}
+
+#reiniciar {
+    padding: 10px 28px;
+    background-color: #000000;
+    color: #ffffff;
+    border: none;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+#reiniciar:hover {
+    background-color: #333333;
+}
